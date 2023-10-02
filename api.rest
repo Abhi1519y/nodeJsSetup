@@ -2,3 +2,8 @@ GET http://localhost:8080/
 
 ### 
 POST http://localhost:8080/tokenGenerate
+
+
+###
+POST http://localhost:8080/verifyToken  
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk4OTgzLCJ1c2VybmFtZSI6IkphbjIwMjMxIiwiZW1haWwiOiJ5YWRhdjE1MTlhYmhzaGVrQGdtYWlsLmNvbSIsImlhdCI6MTY5NjI0OTQyMSwiZXhwIjoxNjk2MjQ5NDgxfQ.qBvpKnnW5PxA5vjAsBUJgPPHkE8sX3R4nFwAjBXozzo
