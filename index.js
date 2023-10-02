@@ -1,40 +1,35 @@
-const express=require('express');
-const app=express();
-const port=8080;
-const jwt=require('jsonwebtoken');
+const express = require('express')
+const app = express();
+const port = 8080;
+const jwt = require('jsonwebtoken');
 
-app.get('/',(req,res)=>{
+app.get('/', (req, res) => {
     res.json({
-      " message":'<h1>happy journey 3....</h1>'
+        "message": "Welcome to Node js"
     })
-   // res.send('<h1>happy journey 3.....git ..</h1>')
-});
-app.post('/tokengenerate',(req,res)=>{
-    const user={
-        id:1211,
-        username:'jan2023',
-        email:'yadav1519abhishek@gmail.com',
-
+    // res.send('<h1>Hello Welcome to Node js!!!!</h1>')
+})
+app.post('/tokenGenerate', (req, res) => {
+    const user = {
+        id: 998983,
+        username: 'Jan20231',
+        email: 'yadav1519abhishek@gmail.com'
     }
-    jwt.sign( user , 'secret', function(err, token) {
+    jwt.sign(user, 'secret', {expiresIn: '60s'}, function(err, token) {
         if(err){
             res.statusCode(403);
-        }
-        else{
-            token
-
+        } else {
+            res.json({
+                token
+            })
         }
       });
-
-})
-
-
-
-app.listen(port,function(err){
+ 
+    });
+app.listen(port, function(err){
     if(err){
-        console.log('error',err);
+        console.log(`Error in running the server : ${err}`);
         return;
     }
-    console.log("server is running up ?");
-    
-});
+    console.log(`Server is up and running on port : ${port}`);
+})
